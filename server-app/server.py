@@ -77,8 +77,8 @@ async def on_ready():
 @bot.command(name="run_docker")
 async def run_docker(ctx):
     channel = bot.get_channel(CHANNEL_ID)
+    await ctx.send("Starting docker client")
     command = "docker run --rm client-app"
-
     try:
         subprocess.run(command, shell=True, text=True, capture_output=True)
     except Exception as e:
