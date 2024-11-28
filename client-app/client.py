@@ -22,7 +22,7 @@ def something_complex():
         "**BOLD**",
         ]
     i = 0
-    while i < 5:
+    while i < len(markdown_list):
         send_message_to_bot(markdown_list[i])
         i += 1
 
