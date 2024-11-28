@@ -14,13 +14,20 @@ def send_message_to_bot(message):
         print(f"Error sending message: {str(e)}")
 
 def something_complex():
+    markdown_list = [
+        "# Big Header", 
+        "## Smaller Header", 
+        "### Even Smaller Header", 
+        "-# Subtext", 
+        "**BOLD**",
+        ]
     i = 0
-    while i < 20:
-        i = i + 1
-        send_message_to_bot(f"Added 1 to {i -1}. Your new number is {i}")
+    while i < 5:
+        send_message_to_bot(markdown_list[i])
+        i += 1
 
 # Send string to discord bot listener
-send_message_to_bot("Hello, this is a message from Docker!")
+send_message_to_bot(f"# Hello, this is a message from Docker!")
 something_complex()
 
 # add message to queue with timestamp (wrapper)
