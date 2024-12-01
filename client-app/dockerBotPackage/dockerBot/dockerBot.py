@@ -11,6 +11,7 @@ SERVER_HOST = "0.0.0.0"
 # Message queue
 message_queue = asyncio.Queue()
 
+# Send message to listener server
 def send_message_to_bot(message):
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
@@ -20,10 +21,11 @@ def send_message_to_bot(message):
     except Exception as e:
         print(f"Error sending message: {str(e)}")
 
+# Add "listened" message to queue to be processed FIFO
 async def add_to_queue(message):
     await message_queue.put(message)
 
-
+# Start listener server on defined host and port
 def start_server():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
         server_socket.bind((SERVER_HOST, PORT))
