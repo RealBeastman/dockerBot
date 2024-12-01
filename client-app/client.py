@@ -29,6 +29,3 @@ def something_complex():
 # Send string to discord bot listener
 send_message_to_bot(f"# Hello, this is a message from Docker!")
 something_complex()
-
-# add message to queue with timestamp (wrapper)
-# FIFO

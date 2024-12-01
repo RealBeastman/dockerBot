@@ -9,4 +9,3 @@ COPY client.py /app/
 
 # Run the Docker app when the container starts
 CMD ["python", "client.py"]
-
