@@ -4,6 +4,12 @@ FROM python:3.10
 # Set the working directory
 WORKDIR /app
 
+# Find and copy the dockerBot package
+COPY ./dockerBotPackage /app/dockerBot
+
+# Install dockerBot
+RUN pip install /app/dockerBot
+
 # Copy the Docker app script
 COPY client.py /app/
 
