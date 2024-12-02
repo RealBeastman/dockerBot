@@ -11,4 +11,4 @@ RUN pip install git+https://github.com/RealBeastman/relay_service.py.git@main
 COPY dockerApp.py /app/
 
 # Run the Docker app when the container starts
-CMD ["python", "client.py"]
+CMD ["python", "dockerApp.py"]
