@@ -5,7 +5,7 @@ FROM python:3.10
 WORKDIR /app
 
 # Install dockerBot
-RUN pip install git+https://github.com/RealBeastman/relay_service.py.git@main
+RUN pip install git+https://github.com/RealBeastman/relay_service.py.git@dev
 
 # Copy the Docker app script
 COPY dockerApp.py /app/
